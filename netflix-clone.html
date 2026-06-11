@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/US-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+
+    .background-overlay {
+      background: rgba(0, 0, 0, 0.65);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 50px;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    button {
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .lang-btn {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+      padding: 7px 15px;
+      margin-right: 15px;
+    }
+
+    .sign-in-btn {
+      background: #e50914;
+      color: white;
+      border: none;
+      padding: 7px 15px;
+    }
+
+    .header-content {
+      color: white;
+      text-align: center;
+      margin: auto;
+      max-width: 800px;
+    }
+
+    .header-content h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .header-content h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    .header-content p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .email-signup {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .email-signup input {
+      padding: 15px;
+      width: 350px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid gray;
+      color: white;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .email-signup button {
+      padding: 15px 25px;
+      background: #e50914;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background-overlay">
+
+    <nav>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" class="logo">
+      <div>
+        <button class="lang-btn">English</button>
+        <button class="sign-in-btn">Sign In</button>
+      </div>
+    </nav>
+
+    <div class="header-content">
+      <h1>Unlimited movies, TV shows, and more</h1>
+      <h3>Watch anywhere. Cancel anytime.</h3>
+      <p>Ready to watch? Enter your email to create or restart your membership.</p>
+
+      <form class="email-signup">
+        <input type="email" placeholder="Email address" required id="emailInput">
+        <button type="submit" id="getStartedBtn">Get Started ></button>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      const form = document.querySelector('.email-signup');
+      const emailInput = document.getElementById('emailInput');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const userEmail = emailInput.value;
+
+        alert("Thanks for joining! We will send updates to: " + userEmail);
+
+        emailInput.value = '';
+      });
+
+    });
+  </script>
+
+</body>
+</html>
